@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff4f7" />
+  <title>PawPal Controller</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="phone-shell">
+    <section id="pairView" class="card pair-card">
+      <div class="hero-pet"><span class="sprite panda love"></span></div>
+      <p class="eyebrow">PAWPAL</p>
+      <h1>Connect to your little pet</h1>
+      <p>Enter the private Paw Code shown on your partner’s desktop pet. It stays only on this device.</p>
+      <form id="pairForm">
+        <input id="pairInput" inputmode="text" autocomplete="off" maxlength="23" placeholder="XXXXX-XXXXX-XXXXX-XXXXX" aria-label="Paw Code" />
+        <button type="submit" class="primary">Pair securely</button>
+      </form>
+      <small>Messages are encrypted before they leave this browser.</small>
+    </section>
+
+    <section id="controlView" class="control hidden">
+      <header class="topbar">
+        <div class="identity">
+          <div class="avatar"><span id="avatarSprite" class="sprite panda idle"></span></div>
+          <div><strong id="petName">Mochi</strong><span id="status" class="status offline">offline</span></div>
+        </div>
+        <button id="settingsButton" class="round" aria-label="Settings">⚙</button>
+      </header>
+
+      <section class="card compose">
+        <label for="messageInput">Send a tiny note</label>
+        <textarea id="messageInput" maxlength="500" rows="3" placeholder="Tell them something cute…"></textarea>
+        <div class="compose-bottom"><span id="charCount">0/500</span><button id="sendMessage" class="primary compact">Send 💗</button></div>
+      </section>
+
+      <section class="section">
+        <h2>Reactions</h2>
+        <div class="reaction-grid">
+          <button data-reaction="heart"><b>💗</b><span>Heart</span></button>
+          <button data-reaction="kiss"><b>💕</b><span>Kiss</span></button>
+          <button data-reaction="hug"><b>🫂</b><span>Hug</span></button>
+          <button data-reaction="flower"><b>🌸</b><span>Flower</span></button>
+          <button data-reaction="wave"><b>👋</b><span>Wave</span></button>
+          <button data-reaction="dance"><b>✨</b><span>Dance</span></button>
+          <button data-reaction="gift"><b>🎁</b><span>Gift</span></button>
+          <button data-reaction="snack"><b>🍓</b><span>Snack</span></button>
+          <button data-reaction="boop"><b>☝️</b><span>Boop</span></button>
+        </div>
+      </section>
+
+      <section class="section actions">
+        <h2>Pet actions</h2>
+        <div class="action-row">
+          <button id="comeHere">🐾 Come here</button>
+          <button id="wakeUp">☀️ Wake up</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="history-title"><h2>Replies</h2><button id="clearHistory">Clear</button></div>
+        <div id="history" class="history"><p class="empty">Replies from the pet will appear here.</p></div>
+      </section>
+    </section>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="settings-card">
+        <div class="dialog-head"><strong>Controller settings</strong><button class="round" value="cancel">×</button></div>
+        <label>Pet nickname
+          <div class="inline"><input id="nicknameInput" maxlength="18" /><button id="sendNickname" type="button">Send</button></div>
+        </label>
+        <label>Preview skin
+          <select id="previewSkin"><option value="panda">Pixel panda</option><option value="cat">Cream pixel cat</option></select>
+        </label>
+        <button id="copyCode" type="button" class="soft">Copy Paw Code</button>
+        <button id="disconnect" type="button" class="soft danger">Disconnect this controller</button>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast hidden"></div>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

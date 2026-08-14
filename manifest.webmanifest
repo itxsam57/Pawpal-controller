@@ -1,0 +1,8 @@
+{
+  "name": "PawPal Controller",
+  "short_name": "PawPal",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8f5",
+  "theme_color": "#fff4f7"
+}
