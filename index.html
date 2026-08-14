@@ -7,12 +7,11 @@
   <title>PawPal Controller</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="patch.css" />
 </head>
 <body>
   <main class="phone-shell">
     <section id="pairView" class="card pair-card">
-      <div class="hero-pet"><span class="sprite panda love"></span></div>
+      <div class="hero-pet"><span class="sprite cat love"></span></div>
       <p class="eyebrow">PAWPAL</p>
       <h1>Connect to your little pet</h1>
       <p>Enter the private Paw Code shown on your partner’s desktop pet. It stays only on this device.</p>
@@ -26,7 +25,7 @@
     <section id="controlView" class="control hidden">
       <header class="topbar">
         <div class="identity">
-          <div class="avatar"><span id="avatarSprite" class="sprite panda idle"></span></div>
+          <div class="avatar"><span id="avatarSprite" class="sprite cat idle"></span></div>
           <div><strong id="petName">Mochi</strong><button id="status" class="status offline" type="button" aria-label="Check whether the desktop pet is online">relay offline</button></div>
         </div>
         <button id="settingsButton" class="round" aria-label="Settings">⚙</button>
@@ -61,6 +60,23 @@
         </div>
       </section>
 
+      <section class="section card reminder-card">
+        <div class="history-title"><h2>Desktop reminders</h2><button id="syncReminders" type="button">Sync</button></div>
+        <p class="reminder-copy">These pop up through the pet on the PC every day at the time you choose.</p>
+        <div class="quick-reminders">
+          <button type="button" data-reminder-text="Drink some water 💧">Water</button>
+          <button type="button" data-reminder-text="Stand up and stretch 🐾">Stretch</button>
+          <button type="button" data-reminder-text="Eat something nice 🍓">Eat</button>
+          <button type="button" data-reminder-text="Take a short screen break 🌷">Break</button>
+        </div>
+        <form id="reminderForm" class="phone-reminder-form">
+          <input id="reminderText" maxlength="120" placeholder="Reminder text" />
+          <input id="reminderTime" type="time" required />
+          <button class="primary compact" type="submit">Add reminder</button>
+        </form>
+        <div id="reminderList" class="phone-reminder-list"><p class="empty">No reminders synced yet.</p></div>
+      </section>
+
       <section class="section">
         <div class="history-title"><h2>Replies</h2><button id="clearHistory">Clear</button></div>
         <div id="history" class="history"><p class="empty">Replies from the pet will appear here.</p></div>
@@ -74,7 +90,7 @@
           <div class="inline"><input id="nicknameInput" maxlength="18" /><button id="sendNickname" type="button">Send</button></div>
         </label>
         <label>Preview skin
-          <select id="previewSkin"><option value="panda">Pixel panda</option><option value="cat">Cream pixel cat</option></select>
+          <select id="previewSkin"><option value="cat">Blush kitty</option><option value="panda">Baby panda</option></select>
         </label>
         <button id="copyCode" type="button" class="soft">Copy Paw Code</button>
         <button id="disconnect" type="button" class="soft danger">Disconnect this controller</button>

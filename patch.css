@@ -1,5 +1,0 @@
-/* Deploy-only runtime patch: keep all four sprite frames visible and style live presence. */
-.sprite{animation:spriteLoopSafe .72s linear infinite}
-@keyframes spriteLoopSafe{0%,24.99%{background-position-x:0}25%,49.99%{background-position-x:-128px}50%,74.99%{background-position-x:-256px}75%,100%{background-position-x:-384px}}
-.status{display:block;margin:2px 0 0;padding:0;border:0;background:transparent;font-size:12px;font-weight:800;text-align:left;color:#a58893;appearance:none;-webkit-appearance:none}
-.status.online{color:#3f9d70}.status.connecting{color:#c68b34}.status.offline{color:#a58893}.status.stale{color:#a1677c;text-decoration:underline dotted;text-underline-offset:3px}
