@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#fff4f7" />
   <title>PawPal Controller</title>
   <link rel="manifest" href="manifest.webmanifest" />
-<link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="patch.css" />
 </head>
 <body>
   <main class="phone-shell">
@@ -26,7 +27,7 @@
       <header class="topbar">
         <div class="identity">
           <div class="avatar"><span id="avatarSprite" class="sprite panda idle"></span></div>
-          <div><strong id="petName">Mochi</strong><span id="status" class="status offline">offline</span></div>
+          <div><strong id="petName">Mochi</strong><button id="status" class="status offline" type="button" aria-label="Check whether the desktop pet is online">relay offline</button></div>
         </div>
         <button id="settingsButton" class="round" aria-label="Settings">⚙</button>
       </header>
